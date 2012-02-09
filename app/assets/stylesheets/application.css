@@ -5,3 +5,7 @@
  *= require_self
  *= require_tree . 
 */
+.brand {
+	font-size: 50px;
+	display: block;
+}

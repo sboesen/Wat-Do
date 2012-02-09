@@ -1,0 +1,15 @@
+<!-- Nav bar -->
+<ul class="nav nav-pills pull-right">
+<li class="active">
+<% @active = @links.shift %>
+<a href="<%= @active[1]%>"><%=@active[0]%></a>
+</li>
+<% @links.each do |link| %>
+<li>
+<a href="<%= link[1] %>"><%= link[0] %></a>
+</li>
+<% end %>
+</ul>
+
+<!-- Logo -->
+<h1><a href="<%= root_url %>">Wat.do</a></h1>
