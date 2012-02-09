@@ -1,17 +1,23 @@
 <!-- Nav bar -->
-<% unless @links.nil?  || @links.count < 2 %>
+<nav>
+<% @signout = signin_signout_url %>
 <ul class="nav nav-pills pull-right">
-<li class="active">
-<% @active = @links.shift %>
-<a href="<%= @active[1]%>"><%=@active[0]%></a>
-</li>
-<% @links.each do |link| %>
-<li>
-<a href="<%= link[1] %>"><%= link[0] %></a>
-</li>
+<% if @links.nil?  || @links.count < 2 %>
+<!-- Didn't pass enough links... default back to old -->
+  <li class="active"><a href="<%= @signout[1]%>"><%=@signout[0]%></a></li>
+<% else %>
+<!--  Continue as they passed links -->
+  <% @active = @links.shift %>
+  <li class="active"><a href="<%= @active[1]%>"><%=@active[0]%></a></li>
+  <% @links.each do |link| %>
+  <li>
+  <a href="<%= link[1] %>"><%= link[0] %></a>
+  </li>
 <% end %>
+<li><a href="<%= @signout[1]%>"><%=@signout[0]%></a></li>
 </ul>
 
 <!-- Logo -->
 <h1><a href="<%= root_url %>">Wat.do</a></h1>
 <% end %>
+</nav>

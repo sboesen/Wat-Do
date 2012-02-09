@@ -26,8 +26,8 @@ module SessionsHelper
   end
 
   def signin_signout_url
-    ['Sign Out' => signout_url] if signed_in?
-    ['Sign In' => signin_url]
+    ['Sign Out', signout_url] if signed_in?
+    ['Sign In',  signin_url]
   end
   #helper_method :current_user, :signed_in?, :requires_login, :redirect_back_or_to
 end
