@@ -1,4 +1,5 @@
 <!-- Nav bar -->
+<% unless @links.nil?  || @links.count < 2 %>
 <ul class="nav nav-pills pull-right">
 <li class="active">
 <% @active = @links.shift %>
@@ -13,3 +14,4 @@
 
 <!-- Logo -->
 <h1><a href="<%= root_url %>">Wat.do</a></h1>
+<% end %>
