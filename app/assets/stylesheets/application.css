@@ -3,9 +3,58 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
- *= require_tree . 
+ *= require bootstrap.css
+ *= require_tree .
+ * 
 */
 .brand {
+	margin-left: 10px;
 	font-size: 50px;
 	display: block;
+	float: left;
+}
+.marginize {
+	margin: 10px;
+}
+
+.main {
+	margin-top: 50px;
+	margin-left: 30px;
+	clear: left;
+}
+nav {
+	margin-bottom: 18px;
+	clear: both;
+}
+
+
+/* Clearfix */
+.clear {
+  clear:both;
+}
+.group:before, 
+.group:after { 
+	content: "";
+	display: table;
+}
+.group:after {
+	clear: both;
+}
+.group {
+	zoom: 1; /* IE6&7 */
+}
+.topspacing {
+	margin-bottom: 14px;
+}
+body {
+	background: url(http://subtlepatterns.com/patterns/green-fibers.png);
+}
+table.table {
+	box-shadow: 3px 3px 10px #ccc;
+}
+.container .hero-unit {
+	padding-top: 40px;
+}
+.center {
+  text-align: center;
 }

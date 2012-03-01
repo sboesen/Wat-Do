@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    @user = User.new
   end
 
   def create
@@ -9,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_back_or_to tasks_url, notice: "Logged in!"
     else
       flash.now.alert = "Invalid email or password"
-      render "new"
+      redirect_to new_session_url, alert: "Something went wrong!"
     end
   end
 

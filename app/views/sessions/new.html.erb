@@ -1,16 +1,27 @@
+<% for message in @user.errors.full_messages %>
+  <li><%= message %></li>
+<% end %>
+
+<div class="center">
+<div class="pull-right">
+<h1>Sign Up</h1>
+
+<%= form_for @user do |f| %>
+  <div class="control-group"><%= f.text_field :email, placeholder: 'Email' %></div>
+  <div class="control-group"><%= f.password_field :password, placeholder: 'Password' %></div>
+  <div class="control-group"><%= f.password_field :password_confirmation, placeholder: 'Password Confirmation' %></div>
+  <div class="form-actions"><%= submit_tag "Create Account", class: "btn btn-primary" %></div>
+
+<% end %>
+</div>
 <div class="pull-left">
 <h1>Log in</h1>
 
 <%= form_tag sessions_path do %>
-  <div class="field">
-    <%= label_tag :email %>
-    <%= text_field_tag :email, params[:email] %>
-  </div>
-  <div class="field">
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
-  <div class="actions"><%= submit_tag "Log in" %></div>
+  <div class="control-group"><%= text_field_tag :email, params[:email], placeholder: 'Email' %></div>
+  <div class="control-group"><%= password_field_tag :password, nil, placeholder: 'Password' %></div>
+  <div class="form-actions"><%= submit_tag "Log in", class: "btn btn-primary" %></div>
 <% end %>
-
 </div>
+</div>
+<div class="clear"></div>

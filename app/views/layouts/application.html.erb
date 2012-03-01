@@ -7,8 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="topspacing"></div>
 <%= render partial: 'layouts/menu' %>
-<%= yield %>
+<div class="container">
+  <div class="hero-unit">
+    
+    <% if flash[:notice] %>
+      <div class="alert"><%= flash[:notice] %></div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-error"><%= flash[:alert] %></div>
+    <% end %>
 
+    <%= yield %>
+  
+  </div>
+</div>
 </body>
 </html>

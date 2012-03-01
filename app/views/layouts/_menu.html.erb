@@ -1,23 +1,16 @@
 <!-- Nav bar -->
-<nav>
-<% @signout = signin_signout_url %>
-<ul class="nav nav-pills pull-right">
-<% if @links.nil?  || @links.count < 2 %>
-<!-- Didn't pass enough links... default back to old -->
-  <li class="active"><a href="<%= @signout[1]%>"><%=@signout[0]%></a></li>
-<% else %>
-<!--  Continue as they passed links -->
-  <% @active = @links.shift %>
-  <li class="active"><a href="<%= @active[1]%>"><%=@active[0]%></a></li>
-  <% @links.each do |link| %>
-  <li>
-  <a href="<%= link[1] %>"><%= link[0] %></a>
-  </li>
-<% end %>
-<li><a href="<%= @signout[1]%>"><%=@signout[0]%></a></li>
-</ul>
+<nav class="group">
+	<!-- Logo -->
+	<h1 class="brand"><%= link_to "Wat.do", tasks_url%></h1>
+	<% @signout = signin_signout_url %>
+	<ul class="nav nav-pills pull-right">
+		<!--  Continue as they passed links -->
+		<%= item_active(@tasks_active).html_safe %><%= link_to "Tasks", tasks_url %></li>
+		<%= item_active(@account_active).html_safe%><%= link_to "Account", '#' %></li>
+		<%= item_active(@help_active).html_safe%><%= link_to "Help", '#' %></li>
 
-<!-- Logo -->
-<h1><a href="<%= root_url %>">Wat.do</a></h1>
-<% end %>
+		<%= item_active(@signup_active).html_safe%><%= link_to @signout[0], @signout[1]%></li>
+	</ul>
+
+	
 </nav>

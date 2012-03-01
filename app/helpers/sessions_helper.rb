@@ -1,17 +1,21 @@
 module SessionsHelper
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    if session[:user_id]
+      @user ||= User.find_by_id(session[:user_id])
+    else
+      nil
+    end
   end
   
   def signed_in?
-    !current_user.nil?
+    !(current_user.nil?)
   end
   
   def requires_login
-    if (!signed_in? && session[:url].nil?) #If user is signed out and the url is nil...
+    if (!signed_in?) #If user is signed out
+      session[:url] = request.url
       redirect_to signin_url
     else
-      session[:url] = request.url if (session[:url] == nil && !signed_in?)
       current_user
     end
   end
@@ -26,8 +30,8 @@ module SessionsHelper
   end
 
   def signin_signout_url
-    ['Sign Out', signout_url] if signed_in?
-    ['Sign In',  signin_url]
+    ['Log Out', signout_url] if signed_in?
+    ['Log In', signin_url]
   end
   #helper_method :current_user, :signed_in?, :requires_login, :redirect_back_or_to
 end

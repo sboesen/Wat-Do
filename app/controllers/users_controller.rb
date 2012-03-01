@@ -5,9 +5,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to root_url, notice: "Signed up!"
+      redirect_back_or_to tasks_url, notice: 'Signed up!'
     else
-      render 'new'
+      redirect_to new_session_url, alert: 'Something went wrong!'
     end
   end
 end
