@@ -1,3 +1,13 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+table#tasks {
+  /*visibility: hidden;*/
+  width: 600px;
+}
+#errors {
+  visibility: hidden;
+}
+.field > #task_description {
+  margin-bottom: 0;
+}

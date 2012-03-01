@@ -6,7 +6,7 @@ before_filter :requires_login, :active_menu_items
   # GET /tasks.json
   def index
     @tasks = @user.tasks.all
-
+    @task = @user.tasks.new
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @tasks }
@@ -53,6 +53,7 @@ before_filter :requires_login, :active_menu_items
         format.html { render action: "new" }
         format.json { render json: @task.errors, status: :unprocessable_entity }
       end
+      format.js
     end
   end
 

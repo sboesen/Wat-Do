@@ -1,8 +1,9 @@
 <h1>Tasks</h1><br />
+<div class="alert alert-info" id="errors"></div>
+<%= render 'miniform' %>
 <table id="tasks" class="table table-striped table-bordered">
   <thead>
     <th>Description</th>
-    <th></th>
     <th></th>
   </thead>
 
@@ -11,4 +12,3 @@
 
 <br />
 
-<%= link_to 'New Task', new_task_path, class: 'btn btn-primary', %> 
