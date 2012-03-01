@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   def new
     @user = User.new
+    @new_user = User.new
   end
 
   def create
@@ -11,11 +12,12 @@ class SessionsController < ApplicationController
     else
       
       if (user)
-        flash.now.alert = "Sorry! Your password doesn't match what we have in our records."
+        alert = "Sorry! Your password doesn't match what we have in our records."
       else
-        flash.now.alert = "Sorry! Your email address doesn't match any in our records!"
+        alert = "Sorry! Your email address doesn't match any in our records!"
       end
-      redirect_to new_session_url, alert: "Something went wrong!"
+      
+      redirect_to new_session_url, alert: alert#"Something went wrong!"
     end
   end
 

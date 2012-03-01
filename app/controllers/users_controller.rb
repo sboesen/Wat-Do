@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_back_or_to tasks_url, notice: 'Signed up!'
     else
-      redirect_to new_session_url, alert: 'Something went wrong!'
+      redirect_to new_session_url, alert: @user.errors.full_messages.first
     end
   end
 end
