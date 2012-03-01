@@ -9,6 +9,9 @@
 //= require jquery-ui
 //= require jquery.purr
 //= require best_in_place
+//= require tooltip
+//= require popover
+//= require date
 //= require_tree .
 
 $(document).ready(function() {
