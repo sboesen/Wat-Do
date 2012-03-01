@@ -9,7 +9,12 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_back_or_to tasks_url, notice: "Logged in!"
     else
-      flash.now.alert = "Invalid email or password"
+      
+      if (user)
+        flash.now.alert = "Sorry! Your password doesn't match what we have in our records."
+      else
+        flash.now.alert = "Sorry! Your email address doesn't match any in our records!"
+      end
       redirect_to new_session_url, alert: "Something went wrong!"
     end
   end
