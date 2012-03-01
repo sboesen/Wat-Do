@@ -14,7 +14,7 @@ module SessionsHelper
   def requires_login
     if (!signed_in?) #If user is signed out
       session[:url] = request.url
-      redirect_to signin_url
+      redirect_to signin_url, notice: "Must be logged in to view this page!"
     else
       current_user
     end
