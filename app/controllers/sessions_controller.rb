@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_filter :active_menu_items
   def new
     @user = User.new
     @new_user = User.new

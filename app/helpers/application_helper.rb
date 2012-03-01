@@ -8,7 +8,7 @@ module ApplicationHelper
       @tasks_active = true
     when 'herp'
       @account_active = true
-    when 'derp'
+    when 'sessions'
       @signup_active = true
     when 'schmerp'
       @help_active = true

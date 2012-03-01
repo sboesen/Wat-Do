@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
 include ApplicationHelper
-before_filter :requires_login#, :menu_urls
+before_filter :requires_login, :active_menu_items
 
   # GET /tasks
   # GET /tasks.json
@@ -81,6 +81,7 @@ before_filter :requires_login#, :menu_urls
     respond_to do |format|
       format.html { redirect_to tasks_url }
       format.json { head :ok }
+      format.js
     end
   end
 end
