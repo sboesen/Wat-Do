@@ -6,4 +6,5 @@ $('table#tasks').show()
 $('#errors').slideUp()
 $('table#tasks').prepend("<%= escape_javascript(render @task) %>")
 $('table#tasks tr#<%= dom_id(@task) %>')
+$('#task_description').val('')
 <% end %>
