@@ -6,8 +6,8 @@ $(document).ready(function() {
       trigger: 'manual',
       placement: 'bottom'
     }
-    $('.calTrig').popover(popoverOptions)
-    $('.calTrig').popover('toggle')
+    $(this).popover(popoverOptions)
+    $(this).popover('toggle')
     var input = $('#popover-input');
     input.keyup(function() {
       var date = input.datetimeparse();
