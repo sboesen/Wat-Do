@@ -24,4 +24,4 @@ function renderContent() {
   output += '<a class="btn btn-small btn-secondary">Cancel</a>'
   output += '</div>'
   return output
-} 
+}
