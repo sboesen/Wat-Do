@@ -1,0 +1,35 @@
+<%= form_for(@task, remote: true) do |f| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+      <ul>
+      <% @task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <div class="input-append">
+      <button id="btn-description" class="btn active" type="button" style="margin-right: -7px;">
+        <div style="font-size: 24px;"><i class="icon-edit"></i></div>
+      </button>
+
+      <%= f.text_field :description, placeholder: 'Walk the dog' %>
+
+      <button id="btn-date" class="btn" type="button" style="margin-right: -5px;">
+        <div style="font-size: 24px;"><i class="icon-home"></i></div>
+      </button>
+      <%= f.text_field :date, placeholder: 'Tuesday at 1 pm' %>
+
+      <button id="btn-place" class="btn" type="button" style="margin-right: -6px;">
+        <div style="font-size: 24px;"><i class="icon-time"></i></div>
+      </button>
+      <%= f.text_field :place, placeholder: 'Dog Park' %>
+
+    </div>
+    
+    
+  </div>
+<% end %>
