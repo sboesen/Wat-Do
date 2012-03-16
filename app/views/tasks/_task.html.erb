@@ -1,5 +1,12 @@
 <tr id="<%= dom_id(task) %>">
   <td><%= best_in_place task, :description, type: 'input' %>
+    <% if !(task.place.nil?) %>
+     (<%= task.place %>)
+    <% end %>
+    <% if !(task.date.nil?) %>
+     (<%= task.date %>)
+    <% end %>
+  </td>
   <td>
     <i class="icon-pencil"></i>
     <%= link_to '<i class="icon-calendar"></i>'.html_safe, '#', class: 'calTrig' %>
