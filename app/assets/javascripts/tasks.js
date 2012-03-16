@@ -42,6 +42,7 @@ function displayDateTimeInputPopoverTop(event) {
     console.log(date)
     $('#input-here').text(date.toString());
   })
+  $('#task_date').trigger('keyup')
   
 };
 function renderContentMainInput() {
