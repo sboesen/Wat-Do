@@ -1,21 +1,11 @@
 $(document).ready(function() {
-  $('.calTrig').click(function(event) {
-    event.preventDefault()
-    popoverOptions = {
-      content: renderContent,
-      trigger: 'manual',
-      placement: 'bottom'
-    }
-    $(this).popover(popoverOptions)
-    $(this).popover('toggle')
-    var input = $('#popover-input');
-    input.keyup(function() {
-      var date = input.datetimeparse();
-      console.log(date)
-      $('.popover-title').text(date.toString());
-    })
-  });
+  
+  $('.calTrig').click(displayDateTimeInputPopoverBottom);
   $('#task_description').keypress(eventHandler);
+  $('#task_date').focusin(displayDateTimeInputPopoverTop);
+  $('#task_date').focusout(function() {
+    $('#task_date').popover('hide');
+  });
   $('#task_place').keypress(eventHandler);
   $('#task_date').keypress(eventHandler);
   $('button').click(function(event) {
@@ -34,9 +24,46 @@ $(document).ready(function() {
 
 
 
-
-
-
+function displayDateTimeInputPopoverTop(event) {
+  popoverOptions = {
+    content: renderContentMainInput,
+    trigger: 'manual',
+    placement: 'top'
+  }
+  $(this).popover(popoverOptions)
+  $(this).popover('toggle')
+  $('.popover').css({
+    'top' : '168px',
+    'left': '305.5px'
+  });
+  var input = $('#task_date');
+  input.keyup(function() {
+    var date = input.datetimeparse();
+    console.log(date)
+    $('#input-here').text(date.toString());
+  })
+  
+};
+function renderContentMainInput() {
+  output = '<div id="input-here"></div>';
+  return output
+}
+function displayDateTimeInputPopoverBottom(event) {
+  event.preventDefault()
+  popoverOptions = {
+    content: renderContent,
+    trigger: 'manual',
+    placement: 'bottom'
+  }
+  $(this).popover(popoverOptions)
+  $(this).popover('toggle')
+  var input = $('#popover-input');
+  input.keyup(function() {
+    var date = input.datetimeparse();
+    console.log(date)
+    $('.popover-title').text(date.toString());
+  })
+};
 function eventHandler(event) {
   var char = String.fromCharCode(event.keyCode);
   if (char == '!') {
