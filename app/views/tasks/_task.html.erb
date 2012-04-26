@@ -1,9 +1,9 @@
 <tr id="<%= dom_id(task) %>">
-  <td><%= best_in_place task, :description, type: 'input' %>
-  </td>
   <td>
-    <i class="icon-pencil"></i>
-    <%= link_to '<i class="icon-calendar"></i>'.html_safe, '#', class: 'calTrig' %>
-    <%= link_to '<i class="icon-trash"></i>'.html_safe, task, method: :delete, remote: true %>
+    <%= best_in_place task, :description, type: 'input' %>
+    <span class="float-right">
+      <!-- <i class="icon-pencil"></i> -->
+      <%= link_to 'Done', task, class: 'btn btn-success task-done', method: :delete, remote: true %>
+    </span>
   </td>
 </tr>
