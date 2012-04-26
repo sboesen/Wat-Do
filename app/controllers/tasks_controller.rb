@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
-include ApplicationHelper
-before_filter :requires_login, :active_menu_items
+  include ApplicationHelper
+  before_filter :requires_login, :active_menu_items
 
   # GET /tasks
   # GET /tasks.json
