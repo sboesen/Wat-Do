@@ -1,10 +1,14 @@
 $(document).ready(function() {
   
-  $('table > tbody > tr').hover(function() {
-    $(this).children('td').children('.float-right').children('a').fadeIn();
-  },
-  function() {
-    $('#tasks > tbody > tr > td > span.float-right > a').hide();
-  }
-  );
+  $('#tasks > tbody > tr').live({
+    mouseenter:
+      function() {
+        $('#tasks > tbody > tr > td > span.float-right > a').clearQueue();
+        $(this).children('td').children('.float-right').children('a').fadeIn('fast');
+      },
+    mouseleave:
+      function() {
+        $('#tasks > tbody > tr > td > span.float-right > a').hide();
+      }
+  });
 });
