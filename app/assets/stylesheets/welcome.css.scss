@@ -1,0 +1,49 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.container > .hero-unit {
+    height: 400px;
+	width: 820px;
+	padding-left: 14px;
+	padding-right: 14px;
+	margin-left: 45px;
+}
+.billboard {
+//    margin-top: 20px;
+    float: left;
+    margin-left: 20px;
+}
+.row {
+//    margin-top: 20px;
+    #register-form {
+        float: right;
+        button {
+            margin-top:14px;
+        }
+        margin-bottom:20px;
+        .well {
+            margin:0;
+            input {
+                height: 24px;
+            }
+        }
+    }
+    #reasons {
+        width: 262px;
+        float: right;
+        li {
+          font-size: 20px;  
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        height: 142px;
+    }
+    div {
+        h2 {
+            margin-bottom:14px;
+        }
+        border: 1px solid #DBDBDB;
+        border-radius: 4px;
+    }
+} 
