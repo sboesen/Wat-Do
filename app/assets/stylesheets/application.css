@@ -7,11 +7,25 @@
  *= require_tree .
  * 
 */
+
+nav.group {
+    ul.nav {
+        form.well {
+            width: 335px;
+            input.first-input {
+                margin-left: 20px;
+            }
+        }
+    }
+}
 .brand {
-	margin-left: 10px;
+	margin-left: 120px;
+	margin-top: 5px;
 	font-size: 50px;
 	display: block;
 	float: left;
+	font-family: 'Lato';
+	font-weight: 300;
 }
 .marginize {
 	margin: 10px;
