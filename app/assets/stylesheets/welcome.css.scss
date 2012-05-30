@@ -5,22 +5,23 @@
     height: 400px;
 	width: 820px;
 	padding-left: 14px;
-	padding-right: 14px;
+	padding-right: 30px;
 	margin-left: 45px;
 }
 .billboard {
 //    margin-top: 20px;
     float: left;
-    margin-left: 20px;
+    margin-left: 36px;
 }
 .row {
-//    margin-top: 20px;
+    margin-top: 0px;
     #register-form {
         float: right;
+				margin-left: 10px;
         button {
             margin-top:14px;
         }
-        margin-bottom:20px;
+        margin-bottom:10px;
         .well {
             margin:0;
             input {
@@ -46,4 +47,20 @@
         border: 1px solid #DBDBDB;
         border-radius: 4px;
     }
-} 
+}
+
+nav.group {
+	form.pull-right {
+		padding: 10px 12px;
+		margin-right: 220px;
+		margin-top: 20px;
+	}
+	h3 {
+		margin-top: 0px;
+		margin-bottom: 6px;
+	}
+	h1.brand {
+		margin-top: 26px;
+		margin-left: 160px;
+	}
+}
