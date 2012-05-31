@@ -1,9 +1,5 @@
-<tr id="<%= dom_id(task) %>">
-  <td>
+<li>
     <%= best_in_place task, :description, type: 'input' %>
-    <span class="float-right">
-      <!-- <i class="icon-pencil"></i> -->
-      <%= link_to 'Done', task, class: 'btn btn-success task-done', method: :delete, remote: true %>
-    </span>
-  </td>
-</tr>
+    <!-- <i class="icon-pencil"></i> -->
+    <%= link_to '✔', task, class: 'btn btn-success task-done', method: :delete, remote: true %>
+</li>

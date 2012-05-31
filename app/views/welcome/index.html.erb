@@ -3,14 +3,16 @@
 		<img src="http://placehold.it/490x410&text=Fancy+Screenshot+Here">
 
 	</div>
-	
+
 	<div id="register-form" class="span4">
+		<%= form_for @user, class: "well" do |f| %>
 		<form class="well">
 		  <h2>New to wat.do?</h2>
-		  <input type="text" class="span3" placeholder="Email">
-			<input type="text" class="span3" placeholder="Password">			
-		  <button type="submit" class="btn btn-primary">Create Account</button>
-		</form>
+		  <%= f.text_field :email,placeholder: "Email" %>
+		  <%= f.password_field :password, placeholder: "Password" %>
+		  <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %>
+		  <%= submit_tag "Create Account", size: nil, class: "btn btn-primary" %>
+		<% end %>
 	</div>
 	<div class="well" id="reasons">
 		<h2>Why join?</h2>

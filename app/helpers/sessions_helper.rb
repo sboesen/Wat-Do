@@ -6,20 +6,21 @@ module SessionsHelper
       nil
     end
   end
-  
+
   def signed_in?
     !(current_user.nil?)
   end
-  
+
   def requires_login
     if (!signed_in?) #If user is signed out
       session[:url] = request.url
-      redirect_to signin_url, notice: "Must be logged in to view this page!"
+      redirect_to signin_url, notice: request.path == '/' ?  nil : "Must be logged in to view this page!"
+      # redirect_to signin_url, notice: "Must be logged in to view this page!"
     else
       current_user
     end
   end
-  
+
   # Thanks sorcery.
   #
   # used when a user tries to access a page while logged out, is asked to login,
@@ -31,7 +32,7 @@ module SessionsHelper
 
   def signin_signout_url
     if signed_in?
-      return ['Log Out', signout_url] 
+      return ['Log Out', signout_url]
     else
       ['Log In', signin_url]
     end
