@@ -1,4 +1,4 @@
-$('#<%= dom_id(@task) %>').remove();
-if ( $('table#tasks').size() == 0) {
-  $("table#tasks").hide() 
+$('li#<%= @task.id %>').remove();
+if ( $('div.white ul').children().size() == 0) {
+  $(".note-box").hide()
 }
