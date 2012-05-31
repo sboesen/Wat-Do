@@ -1,16 +1,12 @@
 <!-- Nav bar -->
 <nav class="group">
   <!-- Logo -->
-  <h1 class="brand"><%= link_to "wat.do", tasks_url%></h1>
+  <h1 class="brand"><%= link_to "wat.do", root_url%></h1>
   <%= form_tag sessions_url, :class => "well form-inline pull-right" do %>
 
-  <!-- <form id="sign-in-form" class="well form-inline pull-right"> -->
     <%= text_field_tag :email, params[:email], class: 'input-small', size: nil, placeholder: "Email" %>
     <%= password_field_tag :password, nil, class: 'input-small', size: nil, placeholder: 'Password' %>
     <%= submit_tag "Log in", class: "btn btn-primary" %>
-    <!-- <input type="text" class="input-small" placeholder="Email"> -->
-    <!-- <input type="password" class="input-small" placeholder="Password"> -->
-    <!-- <button type="submit" class="btn btn-warning welcome-login-button">Sign in</button> -->
     <% end %>
   </form>
 </nav>

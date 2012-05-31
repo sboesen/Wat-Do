@@ -4,6 +4,6 @@ $('#errors').slideDown()
 <% else %>
 $('.note-box').show()
 $('#errors').slideUp()
-$('div.white ul').prepend('<%= escape_javascript(render @task) %>')
+$('div.white ul').append('<%= escape_javascript(render @task) %>')
 $('#task_description').val('')
 <% end %>

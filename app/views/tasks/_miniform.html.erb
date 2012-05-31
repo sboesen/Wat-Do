@@ -12,7 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.text_field :description, placeholder: 'Walk the dog' %>
-    <%= f.submit "Add", class: 'btn btn-primary add-task' %>
+    <p id="task-input-helper">Press enter to add a task</p>
+    <%= f.text_field :description, class: 'span3', placeholder: 'Walk the dog' %>
+
   </div>
 <% end %>

@@ -1,6 +1,14 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.pull-right {
+  position: relative;
+  top: 10px;
+  right: 176px;
+}
+
+
 table#tasks {
   /*visibility: hidden;*/
   width: 500px;
@@ -37,19 +45,28 @@ button .active {
   border-color: #CCCCCC #CCCCCC #B3B3B3;
 }
 #task_description {
-  height: 46px;
-  width: 418px;
+  height: 30px;
+  width: 300px;
   margin: 0;
+  margin-bottom: 20px;
   padding-left: 10px;
+  padding-top: 8px;
   font-size: 20px;
 
 }
+
+#task-input-helper {
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 0;
+  margin-left: 2px;
+}
+
 .btn.btn-primary.add-task {
-  height: 56px;
-  width: 70px;
-  font-size: 16px;
-  margin-right: 0;
-  margin-left: -9px;
+
+  // font-size: 16px;
+  // margin-right: 0;
+  // margin-left: -9px;
 }
 td > span {
   line-height: 28px;
@@ -90,9 +107,9 @@ body {
   background: -o-linear-gradient(top, #515151, #373737);
   background: -ms-linear-gradient(top, #515151, #373737);
   background: linear-gradient(top, #515151, #373737);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.37), 0 6px 18px black;
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.37), 0 6px 18px black;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.37), 0 6px 18px black; }
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.37), 0 1px 6px black;
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.37), 0 1px 6px black;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.37), 0 1px 6px black; }
   .note-box .white {
     width: 500px;
     background: white;

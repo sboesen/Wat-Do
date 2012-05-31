@@ -1,7 +1,7 @@
 <!-- Nav bar -->
 <nav class="group">
 	<!-- Logo -->
-	<h1 class="brand"><%= link_to "wat.do", tasks_url%></h1>
+	<h1 class="brand"><%= link_to "wat.do", root_url%></h1>
 	<% @signout = signin_signout_url %>
 	<ul class="nav nav-pills pull-right">
 		<!--  Continue as they passed links -->
@@ -12,5 +12,5 @@
 		<%= item_active(@signup_active).html_safe%><%= link_to @signout[0], @signout[1]%></li>
 	</ul>
 
-	
+
 </nav>
