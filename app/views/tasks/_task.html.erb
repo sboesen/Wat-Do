@@ -1,5 +1,6 @@
 <%= content_tag :li, id: task.id  do -%>
-    <%= best_in_place task, :description, type: 'input' %>
+
+    <%= best_in_place task, :description, type: 'input', display_as: :desc_display %>
     <!-- <i class="icon-pencil"></i> -->
     <%= link_to '✔', task, class: 'btn btn-success task-done', method: :delete, remote: true %>
 <% end -%>
