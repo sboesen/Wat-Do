@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.text_field :name, class: 'span3', placeholder: 'Walk the dog' %>
+    <%= f.text_field :name, class: 'span3', placeholder: 'School' %>
     <%= f.select :color_id, options_from_collection_for_select(@colors, "id", "name") %>
     <%= f.submit %>
   </div>

@@ -6,7 +6,7 @@
 	<ul class="nav nav-pills pull-right">
 		<!--  Continue as they passed links -->
 		<%= item_active(@tasks_active).html_safe %><%= link_to "Tasks", tasks_url %></li>
-		<%= item_active(@account_active).html_safe%><%= link_to "Account", categories_url %></li>
+		<%= item_active(@account_active).html_safe%><%= link_to "Categories", categories_url %></li>
 		<%= item_active(@help_active).html_safe%><%= link_to "Help", '#' %></li>
 
 		<%= item_active(@signup_active).html_safe%><%= link_to @signout[0], @signout[1]%></li>

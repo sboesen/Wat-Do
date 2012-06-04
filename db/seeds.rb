@@ -6,6 +6,17 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Color.create(red: 0, green: 0, blue: 0, name: "SupaDark")
-Color.create(red: 226, green: 255, blue: 230, name: "SupaBright")
-Category.create(name: 'work', user_id: 1, color_id: 2)
+colors = [[226, 255, 230, 'green'],[242, 240, 223,'tan'],[255, 239, 211,'light brown'],[208, 236, 234,'blue'],[194, 210, 207,'gray']]
+
+colors.each do |color|
+  next if color.size != 4
+  red = color[0]
+  green = color[1]
+  blue = color[2]
+  name = color[3]
+  puts "Red: #{red} Green: #{green} Blue: #{blue} Name: #{name}"
+  Color.create(red: red, green: green, blue: blue, name: name)
+end
+# Color.create(red: 0, green: 0, blue: 0, name: "SupaDark")
+# Color.create(red: 226, green: 255, blue: 230, name: "SupaBright")
+# Category.create(name: 'work', user_id: 1, color_id: 2)
