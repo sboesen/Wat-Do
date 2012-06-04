@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :description %><br />
     <%= f.text_field :description %>
+    <%= f.select :category_id, @categories %>
   </div>
   <div class="actions">
     <%= f.submit %>

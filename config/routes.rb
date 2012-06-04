@@ -6,7 +6,7 @@ Watdo::Application.routes.draw do
   match 'signout' => 'sessions#destroy'
   resources :users
   resources :sessions
-  get 'tasks/derp'
+  resources :categories
   resources :tasks
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

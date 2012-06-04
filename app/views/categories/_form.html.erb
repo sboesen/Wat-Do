@@ -1,0 +1,19 @@
+<%= form_for(@category) do |f| %>
+  <% if @category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% @category.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :name, class: 'span3', placeholder: 'Walk the dog' %>
+    <%= f.select :color_id, options_from_collection_for_select(@colors, "id", "name") %>
+    <%= f.submit %>
+  </div>
+<% end %>

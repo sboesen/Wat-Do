@@ -1,6 +1,8 @@
-<%= content_tag :li, id: task.id  do -%>
+<% style = (task.category != nil && task.category.color != nil) ? "background-color: ##{task.category.color.to_hex}" : nil %>
+<%= content_tag :li, id: task.id, style: style do -%>
 
     <%= best_in_place task, :description, type: 'input', display_as: :desc_display %>
     <!-- <i class="icon-pencil"></i> -->
+    <%= link_to 'Edit', edit_task_path(task), class: 'btn left-more task-done' %>
     <%= link_to '✔', task, class: 'btn btn-success task-done', method: :delete, remote: true %>
 <% end -%>

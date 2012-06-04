@@ -6,7 +6,7 @@ module ApplicationHelper
     case params[:controller]
     when 'tasks'
       @tasks_active = true
-    when 'herp'
+    when 'categories'
       @account_active = true
     when 'sessions'
       @signup_active = true

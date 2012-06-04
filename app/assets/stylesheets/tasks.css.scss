@@ -41,6 +41,11 @@ button .active {
   padding: 7px 10px 14px;
 }
 
+.left-more {
+  right: 50px!important;
+}
+
+
 .input-prepend .active, .input-append .active {
   border-color: #CCCCCC #CCCCCC #B3B3B3;
 }
@@ -68,12 +73,14 @@ button .active {
   // margin-right: 0;
   // margin-left: -9px;
 }
+
+.task-done {
+    display: none;
+}
+
 td > span {
   line-height: 28px;
   margin-left: 10px;
-  .task-done {
-    display: none;
-  }
 }
 td > span.float-right {
   float: right;

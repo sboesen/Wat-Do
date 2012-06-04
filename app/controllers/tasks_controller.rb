@@ -38,6 +38,11 @@ class TasksController < ApplicationController
   # GET /tasks/1/edit
   def edit
     @task = @user.tasks.find(params[:id])
+    @categories = []
+    @categories.push ['None',-1]
+    @user.categories.each do |category|
+      @categories.push [category.name,category.id]
+    end
   end
 
   # POST /tasks
@@ -60,6 +65,7 @@ class TasksController < ApplicationController
   # PUT /tasks/1
   # PUT /tasks/1.json
   def update
+    params.delete :category_id if params[:category_id] == -1
     @task = @user.tasks.find(params[:id])
 
     respond_to do |format|

@@ -1,0 +1,10 @@
+<h2>Categories</h2>
+<div class="alert alert-info" id="errors"></div>
+<%= render 'form' %>
+<ul>
+<%= render @categories %>
+</ul>
+<div id="legend">
+  <h2>Legend</h2>
+<%= render partial: 'categories/color', collection: @colors %>
+</div>
