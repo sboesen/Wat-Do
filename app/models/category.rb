@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  belongs_to :color, class_name: "Color", foreign_key: :color_id
+  has_one :color, foreign_key: :id, primary_key: :color_id
   belongs_to :user
 
   validates :color_id, presence: true
