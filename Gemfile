@@ -29,7 +29,12 @@ gem 'jquery-ui-rails'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
+
+group :production do
+  gem 'therubyracer'
+  gem 'execjs'
+end
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
