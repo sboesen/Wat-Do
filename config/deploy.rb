@@ -16,6 +16,19 @@ role :app, "wat.do"                          # This may be the same as your `Web
 role :db,  "wat.do", :primary => true # This is where Rails migrations will run
 
 
+load 'deploy/assets'
+
+namespace :deploy do
+  namespace :assets do
+    desc 'Run the precompile task locally and rsync with shared'
+    task :precompile, :roles => :web, :except => { :no_release => true } do
+      %x{bundle exec rake assets:precompile}
+      %x{rsync --recursive --times --rsh=ssh --compress --human-readable --progress public/assets #{user}@#{web}:#{shared_path}}
+      %x{bundle exec rake assets:clean}
+    end
+  end
+end
+
 namespace :db do
   desc "Create database yaml in shared path"
   task :default do
