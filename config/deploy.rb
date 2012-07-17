@@ -18,16 +18,6 @@ role :db,  "wat.do", :primary => true # This is where Rails migrations will run
 
 load 'deploy/assets'
 
-namespace :deploy do
-  namespace :assets do
-    desc 'Run the precompile task locally and rsync with shared'
-    task :precompile, :roles => :web, :except => { :no_release => true } do
-      %x{bundle exec rake assets:precompile}
-      %x{rsync --recursive --times --rsh=ssh --compress --human-readable --progress public/assets #{user}@#{web}:#{shared_path}}
-      %x{bundle exec rake assets:clean}
-    end
-  end
-end
 
 namespace :db do
   desc "Create database yaml in shared path"
@@ -39,15 +29,15 @@ namespace :db do
       timeout: 5000
 
     development:
-      database: #{application}_dev.sqlite3
+      database: #{shared_path}/dev.sqlite3
       <<: *base
 
     test:
-      database: #{application}_test.sqlite3
+      database: #{shared_path}/test.sqlite3
       <<: *base
 
     production:
-      database: #{application}_production.sqlite3
+      database: #{shared_path}/production.sqlite3
       <<: *base
     EOF
 
@@ -69,5 +59,6 @@ namespace :rvm do
 end
 
 before "deploy:setup", :db
+after "deploy:update_code", "deploy:migrations"
 after "deploy:update_code", "db:symlink"
 after "deploy:symlink", "rvm:create_rvmrc"
